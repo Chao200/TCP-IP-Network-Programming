@@ -1,3 +1,7 @@
+/*
+    gcc reuseadr_eserver.c -o eserver
+    ./eserver 9190
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -27,7 +31,10 @@ int main(int argc, char* argv[])
     serv_adr.sin_family = AF_INET;
     serv_adr.sin_port = htons(atoi(argv[1]));
 
-    bind(serv_sock, (struct sockaddr*)&serv_adr, sizeof(serv_adr));
+    if (bind(serv_sock, (struct sockaddr*)&serv_adr, sizeof(serv_adr)))
+    {
+        printf("bind() error\n");
+    }
     listen(serv_sock, 5);
 
     clnt_adr_sz = sizeof(clnt_adr);
