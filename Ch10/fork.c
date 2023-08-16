@@ -1,3 +1,7 @@
+/*
+    gcc fork.c -o fork
+    ./fork
+*/
 #include <stdio.h>
 #include <unistd.h>
 

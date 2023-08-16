@@ -1,3 +1,7 @@
+/*
+    gcc waitpid.c -o waitpid
+    ./waitpid
+*/
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/wait.h>
@@ -9,6 +13,7 @@ int main(int argc, char* argv[])
 
     if (pid == 0)
     {
+        printf("Here1\n");
         sleep(15);
         return 24;
     }

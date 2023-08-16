@@ -1,3 +1,7 @@
+/*
+    gcc wait.c wait
+    ./wait
+*/
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -10,19 +14,21 @@ int main(int argc, char* argv[])
 
     if (pid == 0)
     {
+        printf("Here1\n");
         return 3;
     }
     else
     {
-        printf("Child PID: %d \n", pid);
+        printf("Child1 PID: %d \n", pid);
         pid = fork();
         if (pid == 0)
         {
+            printf("Here2\n");
             exit(7);
         }
         else
         {
-            printf("Chile PID: %d \n", pid);
+            printf("Child2 PID: %d \n", pid);
             wait(&status);
             if (WIFEXITED(status))
             {
@@ -33,7 +39,7 @@ int main(int argc, char* argv[])
             {
                 printf("Child send two: %d \n", WEXITSTATUS(status));
             }
-            sleep(30);
+            sleep(10);
         }
     }
 }

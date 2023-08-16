@@ -1,3 +1,7 @@
+/*
+    gcc zombie.c -o zombie
+    ./zombie
+*/
 #include <stdio.h>
 #include <unistd.h>
 
@@ -12,7 +16,7 @@ int main(int argc, char* argv[])
     else
     {
         printf("Child Process ID: %d \n", pid);
-        sleep(30);
+        sleep(20);
     }
 
     if (pid == 0)
