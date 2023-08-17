@@ -1,3 +1,7 @@
+/*
+    gcc signal.c -o signal
+    ./signal
+*/
 #include <stdio.h>
 #include <unistd.h>
 #include <signal.h>
@@ -18,12 +22,14 @@ int main(int argc, char* argv[])
     int i;
     signal(SIGALRM, timeout);
     signal(SIGINT, keycontrol);
-    alarm(2);
+    alarm(5);
 
     for (i = 0; i < 3; ++i)
     {
         puts("wait...");
         sleep(100);
     }
+    printf("end\n");
+    sleep(20);
     return 0;
 }

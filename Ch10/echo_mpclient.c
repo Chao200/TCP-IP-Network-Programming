@@ -1,3 +1,7 @@
+/*
+    gcc echo_mpclient.c -o mpclnt
+    ./mpclnt 127.0.0.1 9190
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

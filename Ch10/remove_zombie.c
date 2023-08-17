@@ -1,3 +1,7 @@
+/*
+    gcc remove_zombie.c -o zombie
+    ./zombie
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -27,24 +31,24 @@ int main(int argc, char* argv[])
     pid = fork();
     if (pid == 0)
     {
-        puts("Hi! I'm child process");
+        puts("Hi! I'm child1 process");
         sleep(10);
         return 12;
     }
     else
     {
-        printf("Child proc id: %d \n", pid);
+        printf("Child1 proc id: %d \n", pid);
         pid = fork();
         if (pid == 0)
         {
-            puts("Hi, I'm child process");
+            puts("Hi, I'm child2 process");
             sleep(10);
             exit(24);
         }
         else
         {
             int i;
-            printf("Child proc id: %d \n", pid);
+            printf("Child2 proc id: %d \n", pid);
             for (i = 0; i < 5; ++i)
             {
                 puts("wait...");

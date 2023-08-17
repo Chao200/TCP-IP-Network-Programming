@@ -1,3 +1,7 @@
+/*
+    gcc echo_mpserver.c -o mpserv
+    ./mpserv 9190
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
