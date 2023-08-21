@@ -1,3 +1,7 @@
+/*
+    gcc pipe2.c -o pipe2
+    ./pipe2
+*/
 #include <stdio.h>
 #include <unistd.h>
 #define BUF_SIZE 30
